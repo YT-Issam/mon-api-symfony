@@ -16,7 +16,7 @@ final class PostController extends AbstractController
         $posts = $postRepository->findAll();
 
         return $this->json([
-            'posts' => $serializer->serialize($posts, 'json'),
+            'posts' => $serializer->normalize($posts),
         ]);
     }
 }
